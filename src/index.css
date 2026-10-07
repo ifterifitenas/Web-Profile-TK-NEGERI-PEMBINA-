@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+
+:root {
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #30465A;
+  background: #FFF9EC;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #FFF9EC;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Chewy', cursive;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+button,
+a,
+input,
+textarea {
+  font-family: 'Nunito', sans-serif;
+}
