@@ -4,7 +4,6 @@ import HomePage from './html/HomePage'
 import ProfilePage from './html/ProfilePage'
 import HistoryPage from './html/HistoryPage'
 import VisionMissionPage from './html/VisionMissionPage'
-import ProgramPage from './html/ProgramPage'
 import FacilityPage from './html/FacilityPage'
 import TeacherPage from './html/TeacherPage'
 import GalleryPage from './html/GalleryPage'
@@ -31,7 +30,6 @@ function App() {
     profil: <ProfilePage />,
     sejarah: <HistoryPage />,
     'visi-misi': <VisionMissionPage />,
-    program: <ProgramPage />,
     fasilitas: <FacilityPage />,
     guru: <TeacherPage />,
     kegiatan: <GalleryPage />,

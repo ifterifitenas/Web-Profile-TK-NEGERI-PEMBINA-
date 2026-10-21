@@ -1,6 +1,9 @@
 .site-footer {
   background: #69B7E5;
   color: #30465A;
+  position: relative;
+  overflow: hidden;
+  border-radius: 60px 60px 0 0;
 }
 
 .footer-main {
@@ -164,6 +167,10 @@
 }
 
 @media (max-width: 460px) {
+  .site-footer {
+    border-radius: 40px 40px 0 0;
+  }
+
   .footer-main {
     grid-template-columns: 1fr;
   }
