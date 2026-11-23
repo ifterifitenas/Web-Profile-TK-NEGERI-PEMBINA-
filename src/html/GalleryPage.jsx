@@ -1086,6 +1086,53 @@ export default function GalleryPage() {
           }
         }
 
+        @media (max-width: 540px) {
+          .gallery-timeline {
+            padding-top: 3rem;
+          }
+
+          .gallery-road-start-node,
+          .gallery-straight-road,
+          .gallery-road-progress,
+          .gallery-bus-track {
+            left: 16px;
+          }
+
+          .gallery-timeline-item {
+            grid-template-columns: 32px minmax(0, 1fr);
+            align-items: stretch;
+            column-gap: 0.65rem;
+            row-gap: 0.75rem;
+          }
+
+          .gallery-photo {
+            grid-column: 2;
+            grid-row: 1;
+            justify-self: stretch;
+          }
+
+          .gallery-marker-col {
+            grid-column: 1;
+            grid-row: 1 / span 2;
+            align-items: center;
+          }
+
+          .gallery-copy {
+            grid-column: 2;
+            grid-row: 2;
+            justify-self: stretch;
+          }
+
+          .gallery-copy-header {
+            flex-wrap: wrap;
+          }
+
+          .gallery-time-badge {
+            max-width: 100%;
+            white-space: normal;
+          }
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .gallery-bus-motion {
             animation: none;

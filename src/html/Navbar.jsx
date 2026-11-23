@@ -16,11 +16,13 @@ const profileItems = [
 
 export default function Navbar({ activeSection, onSelect }) {
   const [profileOpen, setProfileOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const profileIsActive = activeSection === 'profil' || profileItems.some((item) => item.id === activeSection)
 
   const selectItem = (id) => {
     onSelect(id)
     setProfileOpen(false)
+    setMobileMenuOpen(false)
   }
 
   return (
@@ -34,7 +36,20 @@ export default function Navbar({ activeSection, onSelect }) {
           </span>
         </button>
 
-        <ul className="nav-list">
+        <button
+          className={`navbar-menu-toggle${mobileMenuOpen ? ' is-open' : ''}`}
+          type="button"
+          aria-label={mobileMenuOpen ? 'Tutup navigasi' : 'Buka navigasi'}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setMobileMenuOpen((isOpen) => !isOpen)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <ul className={`nav-list${mobileMenuOpen ? ' is-open' : ''}`} id="primary-navigation">
           <li>
             <button
               type="button"

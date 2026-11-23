@@ -1,177 +1,139 @@
 const schoolTimeline = [
   {
     period: '2002',
-    title: 'TK Negeri Pembina mulai didirikan',
-    description: 'Sekolah mulai didirikan sebagai TK negeri di Kota Cimahi.',
+    title: 'TK Negeri Pembina didirikan',
+    description:
+      'TK Negeri Pembina Kota Cimahi mulai didirikan di bawah naungan Dinas Pendidikan Kota Cimahi.',
   },
   {
-    period: '2003–2004',
-    title: 'Pembelajaran pertama dimulai',
+    period: '2003–2007',
+    title: 'Pembelajaran pertama dan kepemimpinan Ibu Ernawati, S.Pd.',
     description:
-      'Tahun pelajaran pertama dimulai. Ibu Ernawati, S.Pd., menjadi kepala sekolah pertama dan bertugas pada 2003–2007.',
+      'Kegiatan pembelajaran dimulai pada tahun pelajaran 2003–2004. Ibu Ernawati menjadi kepala sekolah pertama.',
   },
   {
     period: '2007–2019',
-    title: 'Kepala sekolah: Ibu Ika Surtika, S.Pd.',
-    description: 'Memimpin TK Negeri Pembina sejak tahun pelajaran 2007 hingga 2019.',
+    title: 'Kepemimpinan Ibu Ika Surtika, S.Pd.',
+    description: 'Ibu Ika Surtika melanjutkan kepemimpinan TK Negeri Pembina.',
   },
   {
     period: 'Maret 2019–Juni 2026',
-    title: 'Kepala sekolah: Ibu Oneng Rosanah, S.Pd., M.Pd.',
-    description: 'Melanjutkan kepemimpinan sekolah hingga Juni 2026.',
+    title: 'Kepemimpinan Ibu Oneng Rosanah, S.Pd., M.Pd.',
+    description: 'Ibu Oneng Rosanah memimpin sekolah hingga Juni 2026.',
   },
   {
     period: 'Tahun Ajaran 2026–2027',
     title: 'Plt. Kepala sekolah: Ibu Ani Sumarni, S.Pd.AUD.',
-    description: 'Menjabat sebagai pelaksana tugas kepala sekolah.',
+    description: 'Ibu Ani Sumarni menjalankan tugas sebagai pelaksana tugas kepala sekolah.',
   },
-]
-
-const classGroups = ['Pisang', 'Ceri', 'Jeruk', 'Melon', 'Mangga', 'Anggur', 'Apel', 'Strawberry']
-
-const schoolFacts = [
-  { value: '156', label: 'peserta didik' },
-  { value: '8', label: 'rombongan belajar' },
-  { value: '18', label: 'tenaga pendidik dan kependidikan' },
 ]
 
 export default function HistoryPage() {
   return (
-    <div className="history-page">
-      <section className="history-hero page-section" aria-labelledby="history-title">
-        <div className="history-hero-copy">
-          <p className="section-kicker">Sejarah sekolah</p>
-          <h1 id="history-title">TK Negeri Pembina Kota Cimahi</h1>
-          <p className="history-lead">
-            Berada di bawah naungan Dinas Pendidikan Kota Cimahi, sekolah ini merupakan satu-satunya
-            TK negeri di Kota Cimahi. Pembelajaran pertama dimulai pada tahun pelajaran 2003–2004.
-          </p>
-          <span className="history-authority">Di bawah naungan Dinas Pendidikan Kota Cimahi</span>
-        </div>
-        <div className="history-founded" aria-label="Didirikan pada tahun 2002">
-          <span>Mulai didirikan</span>
-          <strong>2002</strong>
-        </div>
-      </section>
-
-      <section className="history-block" aria-labelledby="history-location-title">
-        <div className="history-heading">
-          <p className="section-kicker">Lokasi dan lingkungan</p>
-          <h2 id="history-location-title">Tumbuh di lingkungan pendidikan dan masyarakat</h2>
-          <p>
-            TK Negeri Pembina Kota Cimahi berada di lingkungan pendidikan yang mencakup TK, SD,
-            SMP, SMA, MAN, dan SMK. Selain SD, SMP, dan MAN, terdapat banyak lembaga PAUD di
-            lingkungan RW 09. Kawasan ini juga merupakan lingkungan permukiman yang padat penduduk.
-          </p>
-        </div>
-
-        <div className="history-location-grid">
-          <article className="history-address-card">
-            <span className="history-card-label">Alamat sekolah</span>
-            <h3>Leuwigajah, Cimahi Selatan</h3>
+    <div className="history-v2">
+      <section className="history-v2-hero" aria-labelledby="history-title">
+        <div className="history-v2-inner history-v2-hero-inner">
+          <div className="history-v2-hero-copy">
+            <p className="section-kicker">Jejak perjalanan sekolah</p>
+            <h1 id="history-title">Sejarah TK Negeri Pembina Kota Cimahi</h1>
             <p>
-              Jl. Kerkhof No. 323, RT 08/RW 09, Kelurahan Leuwigajah, Kecamatan Cimahi Selatan,
-              Kota Cimahi.
+              Berdiri sejak 2002, TK Negeri Pembina tumbuh sebagai satu-satunya TK negeri di Kota
+              Cimahi. Perjalanan sekolah ini berawal dari pembelajaran pertama pada tahun ajaran
+              2003–2004 dan terus berlanjut hingga hari ini.
             </p>
-          </article>
+            <span className="history-v2-authority">Di bawah naungan Dinas Pendidikan Kota Cimahi</span>
+          </div>
+          <div className="history-v2-year" aria-label="Didirikan pada tahun 2002">
+            <span>Didirikan</span>
+            <strong>2002</strong>
+          </div>
+        </div>
+      </section>
 
-          <article className="history-neighborhood-card">
-            <span className="history-card-label">Di sekitar sekolah</span>
-            <h3>Berada di tengah komunitas belajar</h3>
+      <section className="history-v2-timeline" aria-labelledby="history-timeline-title">
+        <div className="history-v2-inner">
+          <header className="history-v2-heading">
+            <p className="section-kicker">Dari masa ke masa</p>
+            <h2 id="history-timeline-title">Perjalanan kepemimpinan</h2>
             <p>
-              Lingkungan sekolah dekat dengan Puskesmas Leuwigajah, Lapangan Poral Leuwigajah,
-              dan Rusunawa Leuwigajah.
+              Catatan tonggak penting sejak sekolah didirikan hingga periode kepemimpinan terbaru.
             </p>
-            <div className="history-nearby-list" aria-label="Fasilitas di sekitar sekolah">
-              <span>Puskesmas</span>
-              <span>Lapangan Poral</span>
-              <span>Rusunawa</span>
-            </div>
-          </article>
+          </header>
+
+          <ol className="history-v2-list">
+            {schoolTimeline.map((milestone, index) => (
+              <li className="history-v2-item" key={milestone.period}>
+                <span className="history-v2-marker" aria-hidden="true">{index + 1}</span>
+                <div className="history-v2-card">
+                  <span className="history-v2-period">{milestone.period}</span>
+                  <div>
+                    <h3>{milestone.title}</h3>
+                    <p>{milestone.description}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      <section className="history-block history-timeline-section" aria-labelledby="history-timeline-title">
-        <div className="history-heading">
-          <p className="section-kicker">Perjalanan kepemimpinan</p>
-          <h2 id="history-timeline-title">Dari tahun ke tahun</h2>
-        </div>
-        <ol className="history-timeline">
-          {schoolTimeline.map((milestone) => (
-            <li className="history-timeline-item" key={milestone.period}>
-              <span className="history-timeline-period">{milestone.period}</span>
-              <div>
-                <h3>{milestone.title}</h3>
-                <p>{milestone.description}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
+      <section className="history-v2-place" aria-labelledby="history-place-title">
+        <div className="history-v2-inner">
+          <header className="history-v2-heading">
+            <p className="section-kicker">Tempat sekolah bertumbuh</p>
+            <h2 id="history-place-title">Bagian dari lingkungan Leuwigajah</h2>
+            <p>
+              Sekolah berada di tengah lingkungan pendidikan dan permukiman yang hidup, dekat dengan
+              layanan kesehatan serta ruang kegiatan masyarakat.
+            </p>
+          </header>
 
-      <section className="history-current" aria-labelledby="history-current-title">
-        <div className="history-heading">
-          <p className="section-kicker">Tahun ajaran 2026–2027</p>
-          <h2 id="history-current-title">Sekolah hari ini</h2>
-          <p>
-            TK Negeri Pembina Kota Cimahi berada di bawah naungan Dinas Pendidikan Kota Cimahi dan
-            merupakan satu-satunya TK negeri yang ada di Kota Cimahi. Pada tahun pelajaran 2026–2027,
-            jumlah anak didik TKN Pembina adalah 156 anak.
-          </p>
-        </div>
-
-        <div className="history-facts-grid">
-          {schoolFacts.map((fact) => (
-            <article className="history-fact-card" key={fact.label}>
-              <strong>{fact.value}</strong>
-              <span>{fact.label}</span>
+          <div className="history-v2-place-grid">
+            <article className="history-v2-place-card history-v2-address">
+              <span className="history-v2-card-label">Alamat sekolah</span>
+              <h3>Leuwigajah, Cimahi Selatan</h3>
+              <p>
+                Jl. Kerkhof No. 323, RT 08/RW 09, Kelurahan Leuwigajah, Kecamatan Cimahi Selatan,
+                Kota Cimahi.
+              </p>
             </article>
-          ))}
-        </div>
-
-        <div className="history-groups">
-          <h3>Delapan kelompok belajar</h3>
-          <ul className="history-group-list">
-            {classGroups.map((group) => <li key={group}>{group}</li>)}
-          </ul>
-        </div>
-
-        <div className="history-campus-panel">
-          <div className="history-campus-stat">
-            <span>Luas sekolah</span>
-            <strong>3.300 <small>m²</small></strong>
+            <article className="history-v2-place-card history-v2-environment">
+              <span className="history-v2-card-label">Lingkungan sekitar</span>
+              <h3>Belajar di tengah komunitas</h3>
+              <p>
+                TK Negeri Pembina berada di kawasan yang dikelilingi berbagai jenjang pendidikan dan
+                lembaga PAUD. Di lingkungan pendidikan sekitar RW 09 terdapat TK, SD, SMP, SMA, MAN,
+                dan SMK, serta berbagai lembaga PAUD. Kawasan ini juga merupakan permukiman yang
+                padat penduduk.
+                {' '}
+                Dalam gambaran yang tercatat, banyak orang tua peserta didik bekerja sebagai karyawan
+                perusahaan dan latar ekonomi keluarga umumnya menengah.
+              </p>
+            </article>
+            <article className="history-v2-place-card history-v2-community">
+              <span className="history-v2-card-label">Fasilitas masyarakat</span>
+              <h3>Dekat dengan layanan sekitar</h3>
+              <p>
+                Di sekitar sekolah terdapat Puskesmas Leuwigajah, Lapangan Poral Leuwigajah, dan
+                Rusunawa Leuwigajah. Kedekatan ini menjadikan sekolah bagian dari lingkungan
+                masyarakat yang aktif.
+              </p>
+            </article>
           </div>
-          <div className="history-campus-copy">
-            <h3>Ruang yang luas, teduh, dan menyenangkan</h3>
-            <p>
-              Pelaksanaan pembelajaran di TK Negeri Pembina terasa menyenangkan karena luas sekolah
-              mencapai 3.300 m². Pada pagi hari udaranya bersih berkat banyaknya pepohonan rindang.
-              Anak-anak dapat berlari-lari dan bermain dengan leluasa, baik di dalam maupun di luar
-              ruangan.
-            </p>
-            <div className="history-campus-tags" aria-label="Suasana sekolah">
-              <span>Pepohonan rindang</span>
-              <span>Udara pagi bersih</span>
-              <span>Bermain di dalam dan luar ruangan</span>
+
+          <aside className="history-v2-campus">
+            <span className="history-v2-campus-mark" aria-hidden="true">✦</span>
+            <div>
+              <p className="section-kicker">Suasana sekolah</p>
+              <h3>Ruang luas, teduh, dan menyenangkan</h3>
+              <p>
+                Area sekolah seluas sekitar 3.300 m² memiliki pepohonan rindang yang membantu
+                menjaga suasana pagi tetap sejuk dan nyaman. Ruang yang tersedia memberi anak
+                keleluasaan untuk berlari, bermain, dan mengikuti pembelajaran di dalam maupun di
+                luar ruangan.
+              </p>
             </div>
-          </div>
-        </div>
-
-        <div className="history-notes-grid">
-          <article className="history-staff-note">
-            <h3>Tenaga sekolah</h3>
-            <p>
-              Tenaga pendidik dan kependidikan tercatat berjumlah 18 orang. Rincian yang dicantumkan
-              meliputi 1 pendidik, 4 tenaga tata usaha, dan 4 penjaga sekolah.
-            </p>
-          </article>
-          <article className="history-family-note">
-            <h3>Latar belakang keluarga</h3>
-            <p>
-              Peserta didik umumnya berasal dari keluarga dengan kondisi ekonomi menengah; banyak
-              orang tua bekerja sebagai karyawan perusahaan.
-            </p>
-          </article>
+          </aside>
         </div>
       </section>
     </div>

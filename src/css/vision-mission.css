@@ -1,165 +1,202 @@
 .vision-mission-page {
-  padding: clamp(1rem, 3vw, 2.25rem);
-  background: #FFFDF5;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  color: #30465A;
+  background: #FFF9EC;
+}
+
+.vision-mission-inner {
+  width: min(1120px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.vision-top-section {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(3rem, 6vw, 5rem);
+  background:
+    radial-gradient(ellipse at 92% 10%, rgba(169, 221, 245, 0.3), transparent 28rem),
+    #FFF9EC;
 }
 
 .vision-mission-heading {
   position: relative;
   display: flex;
-  min-height: 9rem;
+  min-height: 8rem;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding: clamp(1.4rem, 4vw, 2.6rem);
-  overflow: hidden;
-  border: 1px solid rgba(105, 183, 229, 0.38);
-  border-radius: 1.5rem;
-  background: linear-gradient(115deg, #EAF7FC 0%, #F5FBFE 67%, #DDF1FF 100%);
-  isolation: isolate;
+  gap: 1.5rem;
+  margin-bottom: clamp(1.75rem, 4vw, 3rem);
 }
 
-.vision-mission-heading::after {
-  position: absolute;
-  z-index: -1;
-  top: -8rem;
-  right: 7%;
-  width: 19rem;
-  aspect-ratio: 1;
-  border: 1px solid rgba(105, 183, 229, 0.22);
-  border-radius: 50%;
-  box-shadow: 0 0 0 1.3rem rgba(255, 255, 255, 0.24), 0 0 0 2.6rem rgba(255, 255, 255, 0.16);
-  content: '';
+.vision-mission-heading .section-kicker,
+.mission-section-heading .section-kicker {
+  margin: 0 0 0.45rem;
+  color: #3F91BE;
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.vision-mission-heading .section-kicker {
-  margin-bottom: 0.35rem;
+.vision-mission-heading h1,
+.mission-section-heading h2 {
+  margin: 0;
+  color: #30465A;
+  font-family: 'Chewy', cursive;
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.1;
 }
 
-.vision-heading-decoration {
-  position: relative;
-  display: grid;
-  width: 7rem;
-  height: 5.25rem;
+.vision-heading-copy {
+  max-width: 38rem;
+  margin: 0.75rem 0 0;
+  color: #6B7D89;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.75;
+}
+
+.vision-heading-doodle {
+  width: clamp(5rem, 10vw, 8rem);
   flex: 0 0 auto;
-  place-items: center;
-}
-
-.vision-heading-decoration span {
-  position: absolute;
-  width: 1.1rem;
-  aspect-ratio: 1;
-  border: 2px solid #69B7E5;
-  border-radius: 50%;
-  background: #FFFDF5;
-}
-
-.vision-heading-decoration span:first-child {
-  width: 2.2rem;
-  border-width: 3px;
-  background: #A9DDF5;
-}
-
-.vision-heading-decoration span:nth-child(2) {
-  top: 0.45rem;
-  right: 0.85rem;
-}
-
-.vision-heading-decoration span:nth-child(3) {
-  bottom: 0.4rem;
-  left: 0.7rem;
-  width: 0.8rem;
+  overflow: visible;
+  fill: #FFFDF5;
+  stroke: #69B7E5;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
+  animation: vision-doodle-float 6s ease-in-out infinite;
 }
 
 .vision-statement {
   position: relative;
   display: grid;
   justify-items: center;
-  margin-bottom: clamp(2.25rem, 5vw, 3.5rem);
-  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 3rem);
+  min-height: 20rem;
+  align-content: center;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 3rem);
   overflow: hidden;
-  border: 1px solid rgba(105, 183, 229, 0.42);
-  border-radius: 1.75rem;
+  border: 1px solid rgba(63, 145, 190, 0.28);
+  border-radius: 2rem;
   background:
-    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.48) 0 0.2rem, transparent 0.25rem),
-    radial-gradient(circle at 86% 76%, rgba(255, 255, 255, 0.5) 0 0.22rem, transparent 0.27rem),
-    linear-gradient(135deg, #DDF1FF 0%, #A9DDF5 55%, #C9EAF8 100%);
+    radial-gradient(ellipse at 16% 12%, rgba(255, 255, 255, 0.55), transparent 32%),
+    radial-gradient(ellipse at 88% 85%, rgba(255, 255, 255, 0.34), transparent 34%),
+    linear-gradient(125deg, #DDF1FF 0%, #A9DDF5 58%, #CDEBFA 100%);
+  box-shadow: 0 18px 42px rgba(48, 70, 90, 0.1);
   text-align: center;
   isolation: isolate;
+}
+
+.vision-statement::before,
+.vision-statement::after {
+  position: absolute;
+  z-index: -1;
+  width: 13rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.25rem rgba(255, 255, 255, 0.14), 0 0 0 2.5rem rgba(255, 255, 255, 0.08);
+  content: '';
+}
+
+.vision-statement::before {
+  top: -9rem;
+  left: -3rem;
+}
+
+.vision-statement::after {
+  right: -4rem;
+  bottom: -10rem;
 }
 
 .vision-statement-decoration {
   position: absolute;
   z-index: -1;
   inset: 0;
-  overflow: hidden;
   pointer-events: none;
 }
 
 .vision-statement-decoration span {
   position: absolute;
-  width: 10rem;
+  top: 21%;
+  right: 12%;
+  width: 0.65rem;
   aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, 0.48);
   border-radius: 50%;
-  box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0.12), 0 0 0 2rem rgba(255, 255, 255, 0.08);
-}
-
-.vision-statement-decoration span:first-child {
-  top: -6rem;
-  left: -3rem;
+  background: #FFFDF5;
+  box-shadow: 0 0 0 0.4rem rgba(255, 255, 255, 0.24);
 }
 
 .vision-statement-decoration span:last-child {
-  right: -4rem;
-  bottom: -7rem;
-  width: 13rem;
+  top: auto;
+  right: auto;
+  bottom: 20%;
+  left: 13%;
+  width: 0.45rem;
 }
 
 .vision-label {
-  margin: 0 0 1.35rem;
+  margin: 0 0 1.15rem;
   padding: 0.45rem 0.9rem;
-  border: 1px solid rgba(63, 145, 190, 0.22);
+  border: 1px solid rgba(63, 145, 190, 0.24);
   border-radius: 999px;
-  background: rgba(255, 253, 245, 0.78);
-  color: #236E99;
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  background: rgba(255, 253, 245, 0.8);
+  color: #2F6F9C;
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .vision-opening {
   margin: 0;
-  color: #0F2F50;
-  font-family: 'Nunito', sans-serif;
-  font-size: clamp(1rem, 2.1vw, 1.35rem);
-  font-weight: 850;
-  letter-spacing: 0.045em;
-  text-transform: uppercase;
+  color: #30465A;
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
 
 .vision-slogan {
   margin: 0.1rem 0 0.55rem;
-  color: #0F2F50;
-  font-family: 'Nunito', sans-serif;
-  font-size: clamp(2.35rem, 6vw, 4.3rem);
-  font-weight: 1000;
-  line-height: 1.08;
-  text-transform: uppercase;
+  color: #1E3A8A;
+  font-family: 'Chewy', cursive;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.06;
   text-wrap: balance;
 }
 
 .vision-values {
-  max-width: 48rem;
+  max-width: 46rem;
   margin: 0;
   color: #30465A;
-  font-size: clamp(0.82rem, 1.6vw, 1.08rem);
-  font-weight: 900;
-  letter-spacing: 0.065em;
-  line-height: 1.75;
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  line-height: 1.7;
   text-transform: uppercase;
   text-wrap: balance;
+}
+
+.mission-section {
+  position: relative;
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(255, 255, 255, 0.44), transparent 34rem),
+    #EAF6FC;
+}
+
+.mission-section::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  background: linear-gradient(90deg, #A9DDF5, #FFFDF5, #A9DDF5);
+  opacity: 0.72;
+  content: '';
 }
 
 .mission-section-heading {
@@ -167,30 +204,22 @@
   align-items: end;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.15rem;
-}
-
-.mission-section-heading .section-kicker {
-  margin-bottom: 0.3rem;
+  margin-bottom: 1.5rem;
 }
 
 .mission-section-heading h2 {
-  margin: 0;
-  color: #0F2F50;
-  font-family: 'Nunito', sans-serif;
-  font-size: clamp(1.7rem, 3vw, 2.25rem);
-  font-weight: 900;
+  font-size: clamp(2rem, 4vw, 2.8rem);
 }
 
 .mission-count {
   flex: 0 0 auto;
-  padding: 0.48rem 0.8rem;
-  border: 1px solid rgba(105, 183, 229, 0.36);
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgba(63, 145, 190, 0.22);
   border-radius: 999px;
-  background: #EAF7FC;
+  background: rgba(255, 253, 245, 0.8);
   color: #30465A;
-  font-size: 0.78rem;
-  font-weight: 850;
+  font-size: 0.8rem;
+  font-weight: 800;
 }
 
 .mission-list {
@@ -207,19 +236,19 @@
   display: grid;
   min-height: 11rem;
   align-content: start;
-  gap: 1rem;
-  padding: 1.35rem 1.45rem;
+  gap: 0.95rem;
+  padding: 1.35rem;
   overflow: hidden;
-  border: 1px solid rgba(105, 183, 229, 0.36);
-  border-radius: 1.4rem;
-  box-shadow: 0 10px 24px rgba(48, 70, 90, 0.045);
+  border: 1px solid rgba(63, 145, 190, 0.2);
+  border-radius: 1.35rem;
+  box-shadow: 0 10px 24px rgba(48, 70, 90, 0.055);
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
-.mission-card:nth-child(4n + 1) { background: #F2FAFE; }
-.mission-card:nth-child(4n + 2) { background: #FFFDF5; }
-.mission-card:nth-child(4n + 3) { background: #EAF7FC; }
-.mission-card:nth-child(4n) { background: #F8FBFD; }
+.mission-card:nth-child(4n + 1) { background: #FFFDF5; }
+.mission-card:nth-child(4n + 2) { background: #F7FCFE; }
+.mission-card:nth-child(4n + 3) { background: #F4FAFD; }
+.mission-card:nth-child(4n) { background: #FFF9EC; }
 
 .mission-card::after {
   position: absolute;
@@ -227,9 +256,9 @@
   right: -2.6rem;
   width: 8rem;
   aspect-ratio: 1;
-  border: 1px solid rgba(63, 145, 190, 0.13);
+  border: 1px solid rgba(63, 145, 190, 0.12);
   border-radius: 50%;
-  box-shadow: 0 0 0 0.85rem rgba(255, 255, 255, 0.16);
+  box-shadow: 0 0 0 0.85rem rgba(169, 221, 245, 0.08);
   content: '';
   pointer-events: none;
 }
@@ -238,16 +267,15 @@
   position: relative;
   z-index: 1;
   display: grid;
-  width: 2.65rem;
+  width: 2.55rem;
   aspect-ratio: 1;
   place-items: center;
-  border: 2px solid rgba(63, 145, 190, 0.24);
+  border: 2px solid rgba(63, 145, 190, 0.22);
   border-radius: 50%;
-  background: #FFFDF5;
-  color: #236E99;
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 950;
+  background: #DDF1FF;
+  color: #2F6F9C;
+  font-size: 0.82rem;
+  font-weight: 900;
   box-shadow: 0 4px 10px rgba(48, 70, 90, 0.06);
 }
 
@@ -256,35 +284,97 @@
   z-index: 1;
   max-width: 60ch;
   margin: 0;
-  color: #405F78;
-  font-size: 0.97rem;
+  color: #526B7E;
+  font-size: 0.96rem;
   line-height: 1.75;
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .mission-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 30px rgba(48, 70, 90, 0.09);
+    box-shadow: 0 16px 30px rgba(48, 70, 90, 0.1);
   }
 }
 
+@keyframes vision-doodle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
 @media (max-width: 760px) {
-  .vision-mission-page { padding: 1rem; }
-  .vision-mission-heading { min-height: 7.5rem; }
-  .vision-heading-decoration { width: 4.5rem; transform: scale(0.8); }
-  .vision-statement { border-radius: 1.4rem; }
-  .mission-list { grid-template-columns: 1fr; gap: 0.8rem; }
-  .mission-card { min-height: 0; padding: 1.15rem; }
+  .vision-mission-inner {
+    width: min(100% - 2rem, 1120px);
+  }
+
+  .vision-mission-heading {
+    min-height: 0;
+  }
+
+  .vision-statement {
+    min-height: 17rem;
+    border-radius: 1.5rem;
+  }
+
+  .mission-list {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .mission-card {
+    min-height: 0;
+    padding: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .vision-mission-heading { min-height: 6.5rem; padding: 1.2rem; }
-  .vision-heading-decoration { width: 2.5rem; margin-right: -0.5rem; transform: scale(0.62); }
-  .mission-section-heading { align-items: start; }
-  .mission-count { padding-inline: 0.65rem; }
-  .mission-card { gap: 0.8rem; }
+  .vision-mission-inner {
+    width: calc(100% - 2rem);
+  }
+
+  .vision-top-section,
+  .mission-section {
+    padding-block: 2.5rem;
+  }
+
+  .vision-mission-heading {
+    align-items: flex-start;
+  }
+
+  .vision-heading-doodle {
+    width: 4.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .vision-heading-copy {
+    max-width: 25rem;
+  }
+
+  .vision-statement {
+    min-height: 15rem;
+    padding: 2rem 1rem;
+  }
+
+  .vision-values {
+    letter-spacing: 0.025em;
+  }
+
+  .mission-section-heading {
+    align-items: flex-start;
+  }
+
+  .mission-count {
+    padding-inline: 0.65rem;
+  }
+
+  .mission-card p {
+    font-size: 0.92rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mission-card { transition: none; }
+  .vision-heading-doodle,
+  .mission-card {
+    animation: none;
+    transition: none;
+  }
 }

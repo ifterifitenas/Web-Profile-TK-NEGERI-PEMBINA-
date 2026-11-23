@@ -1,7 +1,6 @@
 import schoolLogo from '../assets/Foto/LOGO.jpg'
 import mapIcon from '../assets/Icons/2330619271551682745.svg'
 import phoneIcon from '../assets/Icons/8216011891543238910.svg'
-import emailIcon from '../assets/Icons/11444610701574338604.svg'
 
 const footerLinks = [
   { id: 'home', label: 'Home' },
@@ -65,15 +64,6 @@ export default function Footer({ onNavigate }) {
               </dt>
               <dd>
                 <a href="tel:+62226677954">022-6677954</a>
-              </dd>
-            </div>
-            <div className="contact-row">
-              <dt>
-                <img className="contact-icon" src={emailIcon} alt="Ikon email" />
-                Email
-              </dt>
-              <dd>
-                <a href="mailto:info@tknegeripembina.sch.id">Email resmi sekolah</a>
               </dd>
             </div>
           </dl>

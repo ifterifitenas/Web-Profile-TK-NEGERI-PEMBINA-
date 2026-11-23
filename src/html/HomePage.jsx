@@ -1,21 +1,28 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import homePhoto from '../assets/Foto/Home.jpg'
+import welcomeVideo from '../assets/Video/sambutan.mp4'
+import mondayActivity from '../assets/Foto/Kegiatan/harian_senin/1.jpg'
+import thursdayActivity from '../assets/Foto/Kegiatan/harian_kamis/4.jpg'
+import fridayActivity from '../assets/Foto/Kegiatan/harian_jumat/1.jpg'
+import niningSariningsih from '../assets/Foto/guru/Nining Sariningsih.jpg'
+import sitiRuqoyah from '../assets/Foto/guru/SITI RUQOYAH.jpeg'
+import reniSriWahyuni from '../assets/Foto/guru/Reni Sri Wahyuni.jpg'
 
 const activities = [
   {
-    title: 'Eksplorasi di kelas',
-    category: 'KEGIATAN BELAJAR',
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=85',
+    title: 'Memulai hari dengan semangat',
+    category: 'HARI SENIN',
+    image: mondayActivity,
   },
   {
-    title: 'Bermain dan bergerak',
-    category: 'AKTIVITAS ANAK',
-    image: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=800&q=85',
+    title: 'Bergerak dan belajar bersama',
+    category: 'HARI KAMIS',
+    image: thursdayActivity,
   },
   {
-    title: 'Berkarya bersama',
-    category: 'KREATIVITAS',
-    image: 'https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=800&q=85',
+    title: 'Kegiatan pagi yang ceria',
+    category: 'HARI JUMAT',
+    image: fridayActivity,
   },
 ]
 
@@ -46,9 +53,24 @@ const activityCornerDotPositions = Array.from({ length: 8 * 6 }, (_, index) => {
 }).filter(Boolean)
 
 const teachers = [
-  { name: 'Pendidik Kelompok A', role: 'Guru kelas', note: 'Mendampingi anak belajar dan bermain dengan gembira.', image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=600&q=85' },
-  { name: 'Pendidik Kelompok B', role: 'Guru kelas', note: 'Mendorong rasa ingin tahu dan kemandirian anak.', image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=85' },
-  { name: 'Tenaga Pendidik', role: 'Pendamping anak', note: 'Menciptakan suasana belajar yang aman dan hangat.', image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=85' },
+  {
+    name: 'Nining Sariningsih, S.Pd',
+    role: 'Guru Kelas Mangga',
+    note: 'Berpengalaman mengajar selama 30 tahun dan mengabdi selama 19 tahun.',
+    image: niningSariningsih,
+  },
+  {
+    name: 'Siti Ruqoyah, S.Pd',
+    role: 'Guru Kelas Apel',
+    note: 'Sudah 23 tahun mengajar dan menemani anak bermain sambil belajar.',
+    image: sitiRuqoyah,
+  },
+  {
+    name: 'Reni Sri Wahyuni, S.Pd',
+    role: 'Guru Kelas Anggur',
+    note: 'Berpengalaman mengajar selama 30 tahun dengan penuh semangat.',
+    image: reniSriWahyuni,
+  },
 ]
 
 const whyUsFeatures = [
@@ -319,6 +341,35 @@ function SectionDivider({ fromColor, toColor, className = '', edgeStart = false,
 
 export default function HomePage({ onNavigate }) {
   useScrollReveal()
+  const welcomeSectionRef = useRef(null)
+  const welcomeVideoRef = useRef(null)
+
+  useEffect(() => {
+    const section = welcomeSectionRef.current
+    const video = welcomeVideoRef.current
+
+    if (!section || !video) return undefined
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch((error) => {
+              if (!(error instanceof DOMException && error.name === 'AbortError')) {
+                console.error('Video sambutan gagal diputar otomatis:', error)
+              }
+            })
+          } else {
+            video.pause()
+          }
+        })
+      },
+      { threshold: 0.35 },
+    )
+
+    observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <div className="home-page">
@@ -402,36 +453,28 @@ export default function HomePage({ onNavigate }) {
         edgeEnd
       />
 
-      <section className="welcome-section" data-reveal>
+      <section
+        className="welcome-section"
+        data-reveal
+        ref={welcomeSectionRef}
+        aria-labelledby="welcome-video-title"
+      >
         <HomeDoodle className="doodle-welcome-cloud" />
         <HomeDoodle variant="wide" className="doodle-welcome-cloud-second" />
         <HomeDoodle variant="fluffy" className="doodle-welcome-cloud-third" />
         <HomeDoodle variant="wide" className="doodle-welcome-cloud-fourth" />
         <div className="welcome-section-inner home-container">
-          <div className="welcome-photo-frame">
-            <img
-              src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=800&q=85"
-              alt="Ilustrasi pendidik menyambut keluarga sekolah"
-              loading="lazy"
+          <h2 id="welcome-video-title">Sambutan Kepala Sekolah</h2>
+          <div className="welcome-video-frame">
+            <video
+              ref={welcomeVideoRef}
+              src={welcomeVideo}
+              controls
+              muted
+              playsInline
+              preload="metadata"
+              aria-label="Video sambutan Kepala TK Negeri Pembina"
             />
-            <span className="portrait-label">KEPALA SEKOLAH</span>
-          </div>
-          <div className="welcome-copy">
-            <p className="eyebrow">Sambutan kepala sekolah</p>
-            <h2>Selamat datang di TK Negeri Pembina</h2>
-            <p>
-              Dengan penuh rasa syukur, kami menyambut keluarga baru di TK Negeri Pembina. Kami
-              percaya setiap anak memiliki keunikan dan potensi yang perlu didampingi dengan kasih,
-              kesabaran, serta pengalaman belajar yang bermakna.
-            </p>
-            <p>
-              Mari berkolaborasi menciptakan masa belajar yang menyenangkan, membangun karakter, dan
-              menumbuhkan rasa ingin tahu anak sejak dini.
-            </p>
-            <div className="principal-signature">
-              <strong>Kepala TK Negeri Pembina</strong>
-              <span>Salam hangat untuk seluruh keluarga sekolah</span>
-            </div>
           </div>
         </div>
       </section>

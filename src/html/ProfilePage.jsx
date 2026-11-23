@@ -6,7 +6,7 @@ export default function ProfilePage() {
           <p className="section-kicker">Tentang sekolah</p>
           <h2 className="section-title">Profil TK Negeri Pembina</h2>
         </div>
-        <span className="section-tag">Sejak 1998</span>
+        <span className="section-tag">Didirikan pada 2002</span>
       </div>
 
       <div className="feature-grid">
