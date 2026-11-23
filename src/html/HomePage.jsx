@@ -476,6 +476,22 @@ export default function HomePage({ onNavigate }) {
               aria-label="Video sambutan Kepala TK Negeri Pembina"
             />
           </div>
+          <div className="welcome-copy">
+            <p>
+              Assalamualaikum warahmatullahi wabarakatuh. Selamat datang di TK Negeri Pembina Kota
+              Cimahi. Dengan rasa bahagia, kami menyambut Bapak/Ibu serta seluruh masyarakat yang
+              ingin mengenal lebih dekat TK Negeri Pembina Kota Cimahi. Kami percaya bahwa setiap
+              anak memiliki potensi, keunikan, dan kemampuan yang luar biasa. Oleh karena itu, kami
+              berkomitmen untuk menghadirkan lingkungan pendidikan yang aman, nyaman, dan
+              menyenangkan, sehingga setiap anak dapat belajar, bermain, berkreasi, serta
+              mengembangkan potensinya dengan optimal. Kami mengundang Bapak/Ibu untuk mengenal
+              lebih dekat lingkungan sekolah, berbagai pembelajaran, serta program pendidikan yang
+              kami hadirkan. Mari bergabung bersama TK Negeri Pembina Kota Cimahi. Jadikan langkah
+              awal pendidikan putra-putri tercinta sebagai pengalaman belajar yang menyenangkan dan
+              penuh makna. Kami nantikan Bapak/Ibu di TK Negeri Pembina Kota Cimahi. Terima kasih.
+              Wassalamualaikum warahmatullahi wabarakatuh.
+            </p>
+          </div>
         </div>
       </section>
       <SectionDivider fromColor="#FFFDF5" toColor="#EEF7FB" />

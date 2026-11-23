@@ -2093,41 +2093,88 @@
 .welcome-section {
   display: block;
   padding: 6rem 0 5rem;
-  background: #FFFDF5;
+  background:
+    radial-gradient(circle at 8% 48%, rgba(169, 221, 245, 0.28), transparent 17rem),
+    radial-gradient(circle at 94% 54%, rgba(255, 157, 140, 0.12), transparent 15rem),
+    #FFFDF5;
 }
 
 .welcome-section-inner {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  width: min(1280px, calc(100% - 3rem));
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   align-items: center;
-  gap: 1.5rem;
-  text-align: center;
+  gap: clamp(2.5rem, 5vw, 5rem);
 }
 
 .welcome-section-inner h2 {
+  grid-column: 1 / -1;
   margin: 0;
   color: var(--home-ink);
   font-size: clamp(2rem, 4vw, 2.8rem);
   line-height: 1.2;
+  text-align: center;
 }
 
 .welcome-video-frame {
-  width: min(100%, 58rem);
-  aspect-ratio: 16 / 9;
+  width: min(100%, 23rem);
   overflow: hidden;
-  border: 0.5rem solid #FFFDF5;
-  border-radius: 1.25rem;
-  background: #173B5C;
-  box-shadow: 0 1.25rem 3rem rgba(31, 58, 80, 0.18);
+  border-radius: 0.75rem;
+  box-shadow: 0 1rem 2rem rgba(48, 70, 90, 0.16);
+  justify-self: center;
 }
 
 .welcome-video-frame video {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
+}
+
+.welcome-copy {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem clamp(1.25rem, 2vw, 2rem);
+}
+
+.welcome-copy::before {
+  position: absolute;
+  top: -1.6rem;
+  right: 0.8rem;
+  color: rgba(105, 183, 229, 0.22);
+  content: '“';
+  font-family: 'Chewy', cursive;
+  font-size: 8rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.welcome-copy::after {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 0.45rem solid rgba(169, 221, 245, 0.45);
+  border-radius: 50%;
+  content: '';
+  pointer-events: none;
+}
+
+.welcome-copy p {
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-copy p {
+  margin: 0;
+  color: var(--home-ink);
+  font-size: clamp(1rem, 1.1vw, 1.12rem);
+  font-weight: 600;
+  line-height: 1.9;
 }
 
 .activity-section {
@@ -2228,7 +2275,17 @@
 
   .welcome-section-inner {
     width: min(100% - 2rem, 1120px);
+    grid-template-columns: 1fr;
     gap: 1.25rem;
+  }
+
+  .welcome-section-inner h2 {
+    grid-column: auto;
+  }
+
+  .welcome-copy {
+    min-height: 0;
+    padding: 1rem 0.5rem;
   }
 
   .activity-section,
